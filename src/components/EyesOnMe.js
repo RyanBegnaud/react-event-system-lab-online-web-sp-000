@@ -1,15 +1,18 @@
 import React, {Component} from 'react'
 
 export default class EyesOnMe extends Component {
-    focusSpeak = (e) => {
-        console.log("Good!")
+    speak = (e) => {
+        if(e.type === "focus"){
+            console.log("Good!")
+        } else {
+            console.log('Hey! Eyes on me!')
+        }
     }
 
-    blurSpeak = () => console.log("Hey! Eyes on me!")
-
+  
     render() {
         return(
-            <button onFocus={this.focusSpeak} onBlur={this.blurSpeak}></button>
+            <button onFocus={this.speak} onBlur={this.speak}></button>
         )
     }
 }
